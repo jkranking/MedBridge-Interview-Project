@@ -3,7 +3,7 @@ require_relative './game_models/play_game_model'
 require_relative './game_controllers/play_game'
 
 players = []
-4.times do |n|
+2.times do |n|
 	loop do
 		puts "Player #{n+1}, what is your name?"
 		name = gets.chomp

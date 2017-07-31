@@ -14,8 +14,7 @@ class PlayGame
 			show_transition
 			show_start_round
 			handle_rotate_players
-			players.length.times do |player_index|
-				current_player = players[player_index]
+			players.each do |current_player|
 				show_transition
 				if player_needs_dice_score?(current_player)
 					show_new_turn(current_player)
