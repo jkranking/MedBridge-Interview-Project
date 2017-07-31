@@ -9,12 +9,11 @@ class PlayGame
 
 	def start
 		handle_randomize_players
-		players = handle_get_players
 		while game_on? do
 			show_transition
 			show_start_round
 			handle_rotate_players
-			players.each do |current_player|
+			handle_get_players.each do |current_player|
 				show_transition
 				if player_needs_dice_score?(current_player)
 					show_new_turn(current_player)
@@ -34,7 +33,7 @@ class PlayGame
 	private
 
 	def game_on?
-		@game_model.round <=4
+		@game_model.round <= 4
 	end
 
 	def finished_turn?(response)
